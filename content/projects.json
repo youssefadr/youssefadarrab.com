@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pgair",
+    "name": "PGAIR",
+    "tagline": "Pharmacogenomics AI Research Platform",
+    "description": "AI-driven pharmacogenomics research platform leveraging GraphRAG and multi-omics data for personalized medicine.",
+    "tech": ["Python", "GraphRAG", "Multi-omics", "LLMs"],
+    "url": "https://github.com/youssefadarrab/pgair",
+    "status": "active",
+    "year": 2025
+  },
+  {
+    "id": "neuroplasters",
+    "name": "Neuroplasters",
+    "tagline": "Edge AI Hardware Design",
+    "description": "LLM-assisted hardware design for edge AI applications, bridging the gap between neural networks and physical compute.",
+    "tech": ["Hardware", "Edge AI", "LLM", "System Design"],
+    "url": "https://neuroplaste.ai",
+    "status": "active",
+    "year": 2025
+  },
+  {
+    "id": "deforestation-tracker",
+    "name": "Deforestation Tracker",
+    "tagline": "Satellite Imagery Analysis",
+    "description": "Computer vision pipeline for tracking deforestation patterns using satellite imagery and geospatial data.",
+    "tech": ["Python", "Computer Vision", "Satellite Data"],
+    "url": "https://github.com/youssefadarrab/deforestation_tracker",
+    "status": "completed",
+    "year": 2024
+  },
+  {
+    "id": "memento-mori",
+    "name": "Memento Mori",
+    "tagline": "Life Grid Visualization",
+    "description": "A visual reminder of mortality — interactive life grid showing weeks lived and weeks remaining.",
+    "tech": ["JavaScript", "Data Visualization"],
+    "url": "https://github.com/youssefadarrab/memento_mori",
+    "status": "completed",
+    "year": 2025
+  }
+]
