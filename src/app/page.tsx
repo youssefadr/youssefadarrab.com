@@ -68,52 +68,65 @@ export default function Home() {
         <p className="label">Experience</p>
         <div className="timeline">
           <div className="tl-item tl-now">
-            <p className="tl-date">2024 — present</p>
-            <h3>Software Engineer — Backend, Ops &amp; ML</h3>
-            <p className="tl-org">Monk AI &middot; Paris</p>
-            <p>Backend infrastructure and operational systems.</p>
+            <img src="/images/logos/monk.jpeg" alt="Monk AI" className="tl-logo" />
+            <div className="tl-content">
+              <div className="tl-sub">
+                <p className="tl-date">2024 — present</p>
+                <h3>Software Engineer — Backend, Ops &amp; ML</h3>
+                <p>Backend infrastructure and operational systems.</p>
+              </div>
+              <div className="tl-sub">
+                <p className="tl-date">2023 — 2024</p>
+                <h3>ML Engineer / Backend Engineer</h3>
+                <p>ML pipelines and backend systems.</p>
+              </div>
+              <div className="tl-sub">
+                <p className="tl-date">2022 — 2023</p>
+                <h3>Research Intern — Deep Learning</h3>
+                <p>Generative models and synthetic data.</p>
+              </div>
+              <p className="tl-org">Monk AI &middot; Paris</p>
+            </div>
           </div>
 
           <div className="tl-item">
-            <p className="tl-date">2023 — 2024</p>
-            <h3>ML Engineer / Backend Engineer</h3>
-            <p className="tl-org">Monk AI &middot; Paris</p>
-            <p>ML pipelines and backend systems.</p>
+            <img src="/images/logos/nt3awnou.webp" alt="Nt3awnou" className="tl-logo" />
+            <div className="tl-content">
+              <p className="tl-date">2023</p>
+              <h3>Tech Volunteer</h3>
+              <p className="tl-org">Nt3awnou &middot; Morocco</p>
+              <p>Humanitarian relief tools after the Morocco earthquake.</p>
+            </div>
           </div>
 
           <div className="tl-item">
-            <p className="tl-date">2023</p>
-            <h3>Tech Volunteer</h3>
-            <p className="tl-org">Nt3awnou &middot; Morocco</p>
-            <p>Humanitarian relief tools after the Morocco earthquake.</p>
+            <img src="/images/logos/xhec.jpeg" alt="X-HEC" className="tl-logo" />
+            <div className="tl-content">
+              <p className="tl-date">2023</p>
+              <h3>Guest Lecturer</h3>
+              <p className="tl-org">X-HEC Masters &middot; Paris</p>
+              <p>Applied machine learning.</p>
+            </div>
           </div>
 
           <div className="tl-item">
-            <p className="tl-date">2023</p>
-            <h3>Guest Lecturer</h3>
-            <p className="tl-org">X-HEC Masters &middot; Paris</p>
-            <p>Applied machine learning.</p>
+            <img src="/images/logos/sondra.jpeg" alt="SONDRA" className="tl-logo" />
+            <div className="tl-content">
+              <p className="tl-date">2021 — 2022</p>
+              <h3>Research Assistant</h3>
+              <p className="tl-org">SONDRA Lab &middot; CentraleSup&eacute;lec</p>
+              <p>Signal processing and machine learning research.</p>
+            </div>
           </div>
 
           <div className="tl-item">
-            <p className="tl-date">2022 — 2023</p>
-            <h3>Research Intern — Deep Learning</h3>
-            <p className="tl-org">Monk AI &middot; Paris</p>
-            <p>Generative models and synthetic data.</p>
-          </div>
-
-          <div className="tl-item">
-            <p className="tl-date">2021 — 2022</p>
-            <h3>Research Assistant</h3>
-            <p className="tl-org">SONDRA Lab &middot; CentraleSup&eacute;lec</p>
-            <p>Signal processing and machine learning research.</p>
-          </div>
-
-          <div className="tl-item">
-            <p className="tl-date">2020 — 2021</p>
-            <h3>Data Center Engineer</h3>
-            <p className="tl-org">N+ONE Datacenters &middot; Paris</p>
-            <p>Infrastructure and operations.</p>
+            <img src="/images/logos/nplusone.jpeg" alt="N+ONE" className="tl-logo" />
+            <div className="tl-content">
+              <p className="tl-date">2020 — 2021</p>
+              <h3>Data Center Engineer</h3>
+              <p className="tl-org">N+ONE Datacenters &middot; Paris</p>
+              <p>Infrastructure and operations.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -123,17 +136,23 @@ export default function Home() {
         <p className="label">Education</p>
         <div className="timeline">
           <div className="tl-item">
-            <p className="tl-date">2021 — 2022</p>
-            <h3>CentraleSup&eacute;lec</h3>
-            <p className="tl-org">Paris-Saclay</p>
-            <p>Applied Mathematics, Computer Science, AI.</p>
+            <img src="/images/logos/centralesupelec.jpeg" alt="CentraleSupélec" className="tl-logo" />
+            <div className="tl-content">
+              <p className="tl-date">2021 — 2022</p>
+              <h3>CentraleSup&eacute;lec</h3>
+              <p className="tl-org">Paris-Saclay</p>
+              <p>Applied Mathematics, Computer Science, AI.</p>
+            </div>
           </div>
 
           <div className="tl-item">
-            <p className="tl-date">2018 — 2021</p>
-            <h3>EIGSI</h3>
-            <p className="tl-org">Casablanca</p>
-            <p>Engineering.</p>
+            <img src="/images/logos/eigsi.jpeg" alt="EIGSI" className="tl-logo" />
+            <div className="tl-content">
+              <p className="tl-date">2018 — 2021</p>
+              <h3>EIGSI</h3>
+              <p className="tl-org">Casablanca</p>
+              <p>Engineering.</p>
+            </div>
           </div>
         </div>
       </section>
