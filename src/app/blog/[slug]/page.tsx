@@ -41,13 +41,13 @@ export default async function BlogPostPage({
     return (
       <>
         <Nav />
-        <main className="page-container" style={{ padding: "5rem 1.5rem", textAlign: "center" }}>
-          <h1 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>404</h1>
-          <p style={{ color: "var(--color-ink-muted)" }}>Post not found.</p>
-          <Link href="/#blog" className="btn" style={{ marginTop: "1rem" }}>
-            &larr; Back
+        <div className="container" style={{ padding: "5rem 0", textAlign: "center" }}>
+          <h1 style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "var(--color-bright)" }}>404</h1>
+          <p style={{ color: "var(--color-dim)" }}>Post not found.</p>
+          <Link href="/articles/" style={{ marginTop: "1rem", display: "inline-block" }}>
+            &larr; Back to articles
           </Link>
-        </main>
+        </div>
       </>
     );
   }
@@ -57,16 +57,16 @@ export default async function BlogPostPage({
   return (
     <>
       <Nav />
-      <main className="page-container" style={{ maxWidth: "720px" }}>
-        <div className="post-header">
-          <Link href="/#blog" className="post-back">
-            &larr; back to writing
+      <div className="container">
+        <div className="post-head">
+          <Link href="/articles/" className="post-head-back">
+            &larr; back to articles
           </Link>
-          <p className="post-date">
+          <p className="post-head-date">
             {post.date} &middot; {post.tags.join(", ")}
           </p>
-          <h1 className="post-title">{post.title}</h1>
-          <p className="post-desc">{post.description}</p>
+          <h1>{post.title}</h1>
+          <p className="post-head-desc">{post.description}</p>
         </div>
 
         <article
@@ -75,10 +75,8 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        <footer className="site-footer">
-          &copy; {new Date().getFullYear()} Youssef Adarrab
-        </footer>
-      </main>
+        <div className="footer">&copy; {new Date().getFullYear()} Youssef Adarrab</div>
+      </div>
     </>
   );
 }

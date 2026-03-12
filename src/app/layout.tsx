@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Press_Start_2P } from "next/font/google";
+import { Pixelify_Sans, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const pixelify = Pixelify_Sans({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
+  variable: "--font-pixelify",
 });
 
 const pressStart = Press_Start_2P({
@@ -25,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Youssef Adarrab",
     description:
-      "AI Researcher & Engineer. Research, projects, and writing.",
+      "Software Engineer Backend — ML & AI. Paris.",
     url: "https://youssefadarrab.com",
     siteName: "Youssef Adarrab",
     type: "website",
@@ -34,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Youssef Adarrab",
     description:
-      "AI Researcher & Engineer. Research, projects, and writing.",
+      "Software Engineer Backend — ML & AI.",
   },
   robots: "index, follow",
 };
@@ -46,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${jetbrains.variable} ${pressStart.variable}`}>
+      <body className={`${pixelify.variable} ${pressStart.variable}`}>
         {children}
       </body>
     </html>

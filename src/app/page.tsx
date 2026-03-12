@@ -1,57 +1,198 @@
+import { getAllBlogPosts } from "@/lib/content";
+import Link from "next/link";
+import AsciiPortrait from "@/components/AsciiPortrait";
+import TerminalText from "@/components/TerminalText";
 import Nav from "@/components/Nav";
 
 export default function Home() {
+  const blogPosts = getAllBlogPosts();
+
   return (
-    <>
+    <div className="container">
       <Nav />
-      <main className="page-container">
-        <section className="hero">
-          <h1 className="hero-name">YOUSSEF ADARRAB</h1>
-          <p className="hero-title">
-            Software Engineer Backend — ML & AI &middot; Paris
-          </p>
+      {/* ── HERO ── */}
+      <div className="hero">
+        <div className="hero-centered">
+          <div className="hero-portrait">
+            <AsciiPortrait src="/images/profile.png" cols={150} />
+          </div>
+          <h1 className="hero-pixel-name">Youssef Adarrab</h1>
+          <TerminalText
+            lines={[
+              "Software Engineer · Backend, Ops & ML",
+              "Building backend systems and ML infra in Paris.",
+              "I write here about things I find interesting.",
+            ]}
+            className="hero-terminal"
+            typingSpeed={30}
+            lineDelay={500}
+            startDelay={800}
+          />
+          <div className="socials">
+            <a href="https://github.com/youssefadarrab" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://x.com/polymathXY" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://youtube.com/@Polyousmath" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://linkedin.com/in/youssef-adarrab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:youssef.adarrab@centralesupelec-alumni.com">Email</a>
+          </div>
+        </div>
+      </div>
 
-          <div className="terminal-block">
-            <div className="terminal-bar">
-              <span className="terminal-dot" style={{ background: "#ff5f57" }} />
-              <span className="terminal-dot" style={{ background: "#febc2e" }} />
-              <span className="terminal-dot" style={{ background: "#28c840" }} />
-              <span className="terminal-bar-label">~</span>
-            </div>
-            <div className="terminal-body">
-              <div>
-                <span className="t-prompt">$</span>{" "}
-                <span className="t-cmd">cat status.txt</span>
+
+      {/* ── BLOG ── */}
+      <section id="blog">
+        <p className="label">Blog</p>
+
+        {blogPosts.length > 0 && (
+          <>
+            {blogPosts.map((post) => (
+              <div key={post.slug} className="article-item">
+                <Link href={`/blog/${post.slug}/`}>{post.title}</Link>
+                <p className="article-date">{post.date}</p>
+                <p className="article-desc">{post.description}</p>
+                <div className="article-tags">
+                  {post.tags.map((t) => (
+                    <span key={t} className="article-tag">{t}</span>
+                  ))}
+                </div>
               </div>
-              <div style={{ marginTop: "0.3rem" }}>
-                Building at <span className="t-gold">Monk AI</span>.
-                CentraleSupélec alumnus.
-              </div>
-              <div>
-                From generative DL research to production backend & ops.
-              </div>
-              <div>
-                Ship fast, learn everything.
-              </div>
-              <div style={{ marginTop: "0.4rem" }}>
-                <span className="t-prompt">$</span> <span className="t-cursor" />
-              </div>
+            ))}
+          </>
+        )}
+
+        <div className="coming-soon">More articles coming soon...</div>
+      </section>
+
+      {/* ── EXPERIENCE ── */}
+      <section id="experience">
+        <p className="label">Experience</p>
+        <div className="timeline">
+          <div className="tl-item tl-now">
+            <p className="tl-date">2024 — present</p>
+            <h3>Software Engineer — Backend, Ops &amp; ML</h3>
+            <p className="tl-org">Monk AI &middot; Paris</p>
+            <p>Backend infrastructure and operational systems.</p>
+          </div>
+
+          <div className="tl-item">
+            <p className="tl-date">2023 — 2024</p>
+            <h3>ML Engineer / Backend Engineer</h3>
+            <p className="tl-org">Monk AI &middot; Paris</p>
+            <p>ML pipelines and backend systems.</p>
+          </div>
+
+          <div className="tl-item">
+            <p className="tl-date">2023</p>
+            <h3>Tech Volunteer</h3>
+            <p className="tl-org">Nt3awnou &middot; Morocco</p>
+            <p>Humanitarian relief tools after the Morocco earthquake.</p>
+          </div>
+
+          <div className="tl-item">
+            <p className="tl-date">2023</p>
+            <h3>Guest Lecturer</h3>
+            <p className="tl-org">X-HEC Masters &middot; Paris</p>
+            <p>Applied machine learning.</p>
+          </div>
+
+          <div className="tl-item">
+            <p className="tl-date">2022 — 2023</p>
+            <h3>Research Intern — Deep Learning</h3>
+            <p className="tl-org">Monk AI &middot; Paris</p>
+            <p>Generative models and synthetic data.</p>
+          </div>
+
+          <div className="tl-item">
+            <p className="tl-date">2021 — 2022</p>
+            <h3>Research Assistant</h3>
+            <p className="tl-org">SONDRA Lab &middot; CentraleSup&eacute;lec</p>
+            <p>Signal processing and machine learning research.</p>
+          </div>
+
+          <div className="tl-item">
+            <p className="tl-date">2020 — 2021</p>
+            <h3>Data Center Engineer</h3>
+            <p className="tl-org">N+ONE Datacenters &middot; Paris</p>
+            <p>Infrastructure and operations.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── EDUCATION ── */}
+      <section id="education">
+        <p className="label">Education</p>
+        <div className="timeline">
+          <div className="tl-item">
+            <p className="tl-date">2021 — 2022</p>
+            <h3>CentraleSup&eacute;lec</h3>
+            <p className="tl-org">Paris-Saclay</p>
+            <p>Applied Mathematics, Computer Science, AI.</p>
+          </div>
+
+          <div className="tl-item">
+            <p className="tl-date">2018 — 2021</p>
+            <h3>EIGSI</h3>
+            <p className="tl-org">Casablanca</p>
+            <p>Engineering.</p>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ── PUBLICATIONS ── */}
+      <section id="publications">
+        <p className="label">Publications</p>
+
+        <div className="pub-grid">
+          <div className="pub">
+            <h3>No Village Left Behind: A Moroccan Data-driven Platform for Effective Aid Coordination</h3>
+            <p className="pub-meta">
+              A. Bounhar, A. Anouzla, A. Lekssays, A. Zizaan,
+              B. Chourane, F.Z. Qachfar, H. Ouifak, I. Momayiz,
+              L. Ben Allal, M. Razzouqi, M. Jebrane, M. Ajeghrir,
+              N. Hatibi, N. Tazi, S. Messoudi, Y. Bendou,
+              Y. Adarrab
+            </p>
+            <p className="pub-meta">NeurIPS 2023 &middot; North Africans in ML Workshop</p>
+            <p>
+              Following the catastrophic earthquake that hit Morocco in September 2023,
+              our platform emerged to optimize relief coordination, efficiently orchestrating
+              resources to aid those in need. This paper presents the various techniques used
+              to collect and process requests and interventions into a clean and actionable
+              dataset, enabling authorities and fellow NGOs to efficiently extend aid to the
+              affected areas.
+            </p>
+            <div className="pub-embed">
+              <iframe src="/images/neurips-poster.pdf" title="NeurIPS 2023 Poster" />
             </div>
           </div>
 
-          <div className="hero-links" style={{ marginTop: "1.5rem" }}>
-            <a href="https://github.com/youssefadarrab" target="_blank" rel="noopener noreferrer" className="hero-link">GitHub</a>
-            <a href="https://x.com/polymathXY" target="_blank" rel="noopener noreferrer" className="hero-link">X</a>
-            <a href="https://youtube.com/@Polyoussmath" target="_blank" rel="noopener noreferrer" className="hero-link">YouTube</a>
-            <a href="https://linkedin.com/in/youssef-adarrab" target="_blank" rel="noopener noreferrer" className="hero-link">LinkedIn</a>
-            <a href="mailto:hello@youssefadarrab.com" className="hero-link">Email</a>
+          <div className="pub">
+            <h3>Deep Learning for the Super Resolution of SAR Images</h3>
+            <p className="pub-meta">
+              Y. Adarrab, D. Colombo, A. Daly, I. Hinostroza, C. Ren, J. Fix
+            </p>
+            <p className="pub-meta">SONDRA Lab &middot; CentraleSup&eacute;lec &middot; 2022</p>
+            <p>
+              In this study, we are interested in Synthetic Aperture Radar (SAR) data,
+              in particular those captured during campaigns carried out by unmanned aircraft.
+              SAR data is captured by a radar antenna placed underneath either an aircraft or
+              a satellite and pointing to the sides. Our work considered horizontally polarised
+              transmitting and measuring antenna (HH). From these measurements, one can detect
+              ground movements, objects or buildings, segregate land use, etc. In contrast to
+              optical measurements, SAR data can be captured day and night and can penetrate
+              cloud layers. However, the quality of object detection or segmentation is dependent
+              on the frequency of the chirp and this study investigates the ability to infer high
+              resolution SAR images from low resolution ones.
+            </p>
+            <div className="pub-embed">
+              <iframe src="/images/sondra-poster.pdf" title="SONDRA SAR Poster" />
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <footer className="site-footer">
-          &copy; {new Date().getFullYear()} Youssef Adarrab
-        </footer>
-      </main>
-    </>
+      <div className="footer">&copy; {new Date().getFullYear()} Youssef Adarrab</div>
+    </div>
   );
 }
