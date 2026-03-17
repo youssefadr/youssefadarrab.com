@@ -30,7 +30,7 @@ export default function Home() {
             startDelay={800}
           />
           <div className="socials">
-            <a href="https://github.com/youssefadarrab" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/youssefadr" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://x.com/polymathXY" target="_blank" rel="noopener noreferrer">X</a>
             <a href="https://youtube.com/@Polyousmath" target="_blank" rel="noopener noreferrer">YouTube</a>
             <a href="https://linkedin.com/in/youssef-adarrab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
