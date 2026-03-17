@@ -16,6 +16,7 @@ export default function ToggleSection({
   defaultOpen = false,
 }: ToggleSectionProps) {
   const [open, setOpen] = useState(defaultOpen);
+  const [revealed, setRevealed] = useState(defaultOpen);
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number | undefined>(undefined);
 
@@ -32,7 +33,18 @@ export default function ToggleSection({
     }
   }, []);
 
-  // Listen for nav clicks — collapse when the nav link for this section is clicked
+  // Trigger the stagger reveal class after opening
+  useEffect(() => {
+    if (open) {
+      // Small delay so the height animation starts first, then children stagger in
+      const t = setTimeout(() => setRevealed(true), 60);
+      return () => clearTimeout(t);
+    } else {
+      setRevealed(false);
+    }
+  }, [open]);
+
+  // Listen for nav clicks — toggle when the nav link for this section is clicked
   useEffect(() => {
     const handler = (e: Event) => {
       const detail = (e as CustomEvent).detail;
@@ -45,7 +57,7 @@ export default function ToggleSection({
   }, [id]);
 
   return (
-    <section id={id}>
+    <section id={id} className={open ? "section--open" : ""}>
       <button
         className="section-toggle"
         onClick={() => setOpen((v) => !v)}
@@ -60,7 +72,7 @@ export default function ToggleSection({
 
       <div
         id={`${id}-content`}
-        className="toggle-body"
+        className={`toggle-body ${revealed ? "toggle-body--revealed" : ""}`}
         style={{
           height: open ? (height ?? "auto") : 0,
           opacity: open ? 1 : 0,

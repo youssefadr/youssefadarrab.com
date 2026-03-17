@@ -41,9 +41,7 @@ export default function Home() {
 
 
       {/* ── BLOG ── */}
-      <section id="blog">
-        <p className="label">Blog</p>
-
+      <ToggleSection id="blog" label="Blog">
         {blogPosts.length > 0 && (
           <>
             {blogPosts.map((post) => (
@@ -62,7 +60,7 @@ export default function Home() {
         )}
 
         <div className="coming-soon">More articles coming soon...</div>
-      </section>
+      </ToggleSection>
 
       {/* ── EXPERIENCE ── */}
       <ToggleSection id="experience" label="Experience">
@@ -158,9 +156,7 @@ export default function Home() {
 
 
       {/* ── PUBLICATIONS ── */}
-      <section id="publications">
-        <p className="label">Publications</p>
-
+      <ToggleSection id="publications" label="Publications">
         <div className="pub-grid">
           <div className="pub">
             <h3>No Village Left Behind: A Moroccan Data-driven Platform for Effective Aid Coordination</h3>
@@ -208,7 +204,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </ToggleSection>
 
       <div className="footer">&copy; {new Date().getFullYear()} Youssef Adarrab</div>
     </div>

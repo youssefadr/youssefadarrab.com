@@ -371,7 +371,13 @@ a:hover { opacity: 0.6; }
   border-top: 2px solid var(--color-border);
   cursor: pointer;
   margin-bottom: 1.5rem;
-  transition: opacity 0.15s;
+  transition: border-color 0.3s, opacity 0.15s;
+}
+
+/* Green glow on the top border when section is open */
+.section--open .section-toggle {
+  border-top-color: rgba(0, 255, 0, 0.3);
+  box-shadow: 0 -1px 8px rgba(0, 255, 0, 0.08);
 }
 
 .section-toggle:hover {
@@ -383,6 +389,13 @@ a:hover { opacity: 0.6; }
   padding-top: 0;
   margin: 0;
   pointer-events: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Label glows green when open */
+.section--open .section-toggle .label {
+  color: #0f0;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
 }
 
 .toggle-arrow {
@@ -392,7 +405,7 @@ a:hover { opacity: 0.6; }
   font-size: 0.7rem;
   color: #0f0;
   text-shadow: 0 0 6px rgba(0, 255, 0, 0.5), 0 0 12px rgba(0, 255, 0, 0.2);
-  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1), text-shadow 0.3s;
   transform: rotate(0deg);
   width: 1.2rem;
   height: 1.2rem;
@@ -401,6 +414,7 @@ a:hover { opacity: 0.6; }
 
 .toggle-arrow--open {
   transform: rotate(90deg);
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.3);
 }
 
 .toggle-body {
@@ -409,6 +423,31 @@ a:hover { opacity: 0.6; }
     height 0.35s cubic-bezier(.4, 0, .2, 1),
     opacity 0.25s cubic-bezier(.4, 0, .2, 1);
 }
+
+/* Stagger-reveal children when toggling open */
+.toggle-body > div > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.3s cubic-bezier(.4, 0, .2, 1),
+    transform 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.toggle-body--revealed > div > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toggle-body--revealed > div > *:nth-child(1) { transition-delay: 0.04s; }
+.toggle-body--revealed > div > *:nth-child(2) { transition-delay: 0.08s; }
+.toggle-body--revealed > div > *:nth-child(3) { transition-delay: 0.12s; }
+.toggle-body--revealed > div > *:nth-child(4) { transition-delay: 0.16s; }
+.toggle-body--revealed > div > *:nth-child(5) { transition-delay: 0.20s; }
+.toggle-body--revealed > div > *:nth-child(6) { transition-delay: 0.24s; }
+.toggle-body--revealed > div > *:nth-child(7) { transition-delay: 0.28s; }
+.toggle-body--revealed > div > *:nth-child(8) { transition-delay: 0.32s; }
+.toggle-body--revealed > div > *:nth-child(9) { transition-delay: 0.36s; }
+.toggle-body--revealed > div > *:nth-child(10) { transition-delay: 0.40s; }
 
 /* === VERTICAL TIMELINE === */
 .timeline {
