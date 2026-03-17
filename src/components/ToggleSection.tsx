@@ -13,7 +13,7 @@ export default function ToggleSection({
   id,
   label,
   children,
-  defaultOpen = true,
+  defaultOpen = false,
 }: ToggleSectionProps) {
   const [open, setOpen] = useState(defaultOpen);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ export default function ToggleSection({
     const handler = (e: Event) => {
       const detail = (e as CustomEvent).detail;
       if (detail === id) {
-        setOpen(false);
+        setOpen((v) => !v);
       }
     };
     window.addEventListener("toggle-section", handler);
