@@ -3,6 +3,7 @@ import Link from "next/link";
 import AsciiPortrait from "@/components/AsciiPortrait";
 import TerminalText from "@/components/TerminalText";
 import Nav from "@/components/Nav";
+import ToggleSection from "@/components/ToggleSection";
 
 export default function Home() {
   const blogPosts = getAllBlogPosts();
@@ -64,8 +65,7 @@ export default function Home() {
       </section>
 
       {/* ── EXPERIENCE ── */}
-      <section id="experience">
-        <p className="label">Experience</p>
+      <ToggleSection id="experience" label="Experience">
         <div className="timeline">
           <div className="tl-item tl-now">
             <img src="/images/logos/monk.jpeg" alt="Monk AI" className="tl-logo" />
@@ -129,11 +129,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </ToggleSection>
 
       {/* ── EDUCATION ── */}
-      <section id="education">
-        <p className="label">Education</p>
+      <ToggleSection id="education" label="Education">
         <div className="timeline">
           <div className="tl-item">
             <img src="/images/logos/centralesupelec.jpeg" alt="CentraleSupélec" className="tl-logo" />
@@ -155,7 +154,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </ToggleSection>
 
 
       {/* ── PUBLICATIONS ── */}
