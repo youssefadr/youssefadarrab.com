@@ -41,7 +41,7 @@ export default function Home() {
 
 
       {/* ── BLOG ── */}
-      <ToggleSection id="blog" label="Blog">
+      <ToggleSection id="blog" label="Blog" defaultOpen>
         {blogPosts.length > 0 && (
           <>
             {blogPosts.map((post) => (
@@ -156,7 +156,7 @@ export default function Home() {
 
 
       {/* ── PUBLICATIONS ── */}
-      <ToggleSection id="publications" label="Publications">
+      <ToggleSection id="publications" label="Publications" defaultOpen>
         <div className="pub-grid">
           <div className="pub">
             <h3>No Village Left Behind: A Moroccan Data-driven Platform for Effective Aid Coordination</h3>
