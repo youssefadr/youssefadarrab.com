@@ -156,7 +156,7 @@ export default function Home() {
 
 
       {/* ── PUBLICATIONS ── */}
-      <ToggleSection id="publications" label="Publications" defaultOpen>
+      <ToggleSection id="publications" label="Publications">
         <div className="pub-grid">
           <div className="pub">
             <h3>No Village Left Behind: A Moroccan Data-driven Platform for Effective Aid Coordination</h3>
